@@ -278,6 +278,13 @@ def get_bs_report(filters):
                     "indent": 1,
                 }
             )
+
+    data.extend(
+        [
+            {"group": "Retained Earnings", "indent": 0},
+        ]
+    )
+
     chart_labels = []
     chart_assets = []
     chart_liabilties = []
@@ -327,6 +334,12 @@ def get_bs_report(filters):
             if a["group"] == "Liability" and a.get("ledger_code") is None
         ]
         old_data[0][tbdate] = liabilities
+        old_data = [
+            a
+            for a in data
+            if a["group"] == "Retained Earnings" and a.get("ledger_code") is None
+        ]
+        old_data[0][tbdate] = assets + liabilities
         chart_liabilties.append(liabilities)
         chart_retained.append(assets + liabilities)
 
