@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"M53_8iftY5\",\"type\":\"card\",\"data\":{\"card_name\":\"TB\",\"col\":4}},{\"id\":\"ccphrjvROM\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"BS Delta Report\",\"col\":3}},{\"id\":\"olU8Z9YQV9\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Custom Pnl Report\",\"col\":3}}]",
+ "content": "[{\"id\":\"M53_8iftY5\",\"type\":\"card\",\"data\":{\"card_name\":\"TB\",\"col\":4}},{\"id\":\"s5qFSxt9Qt\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Financial Accounting Reports\",\"col\":3}}]",
  "creation": "2024-05-21 08:28:54.714129",
  "custom_blocks": [],
  "docstatus": 0,
@@ -41,19 +41,9 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
-  },
-  {
-   "hidden": 0,
-   "is_query_report": 0,
-   "label": "Delta Report",
-   "link_count": 0,
-   "link_to": "Delta Report",
-   "link_type": "Report",
-   "onboard": 0,
-   "type": "Link"
   }
  ],
- "modified": "2024-05-21 13:33:48.776787",
+ "modified": "2024-05-22 08:38:25.680329",
  "modified_by": "Administrator",
  "module": "Accounting Report",
  "name": "TB",
@@ -68,15 +58,8 @@
   {
    "color": "Grey",
    "doc_view": "List",
-   "label": "BS Delta Report",
-   "link_to": "Delta Report",
-   "type": "Report"
-  },
-  {
-   "color": "Grey",
-   "doc_view": "List",
-   "label": "Custom Pnl Report",
-   "link_to": "Custom PnL Report",
+   "label": "Financial Accounting Reports",
+   "link_to": "Financial Accounting Reports",
    "type": "Report"
   }
  ],
