@@ -132,7 +132,7 @@ def get_pnl_report(filters):
         ledgers = frappe.db.get_all(
             "Trial Balance Child",
             filters=[{"parent": tb.name}],
-            fields=["ledger_code", "ledger_name", "balance"],
+            fields=["ledger_code", "balance"],
             order_by="ledger_code",
         )
         tbdate = tb.trial_balance_date.strftime("%d-%m-%Y")
@@ -305,7 +305,7 @@ def get_bs_report(filters):
         ledgers = frappe.db.get_all(
             "Trial Balance Child",
             filters=[{"parent": tb.name}],
-            fields=["ledger_code", "ledger_name", "balance"],
+            fields=["ledger_code", "balance"],
             order_by="ledger_code",
         )
         tbdate = tb.trial_balance_date.strftime("%d-%m-%Y")
