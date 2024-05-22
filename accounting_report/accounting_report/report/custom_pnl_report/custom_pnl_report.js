@@ -10,7 +10,7 @@ frappe.query_reports["Custom PnL Report"] = {
       fieldtype: "Date",
       width: "80",
       reqd: 1,
-      default: frappe.datetime.add_days(frappe.datetime.get_today(), -90),
+      default: frappe.datetime.year_start(),
     },
     {
       fieldname: "to_date",
@@ -18,7 +18,7 @@ frappe.query_reports["Custom PnL Report"] = {
       fieldtype: "Date",
       width: "80",
       reqd: 1,
-      default: frappe.datetime.get_today(),
+      default: frappe.datetime.year_end(),
     },
   ],
 };
