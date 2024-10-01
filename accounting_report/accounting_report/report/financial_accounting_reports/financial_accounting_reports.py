@@ -125,6 +125,7 @@ def get_pnl_report(filters):
                     "fieldname": tb.trial_balance_date.strftime("%d-%m-%Y"),
                     "fieldtype": "Float",
                     "width": 180,
+                    "precision": "0",
                 }
             ]
         )
@@ -174,9 +175,21 @@ def get_pnl_report(filters):
         "data": {
             "labels": chart_labels,
             "datasets": [
-                {"name": "Revenue", "values": chart_revenue, "chartType": "bar"},
-                {"name": "Expense", "values": chart_expense, "chartType": "bar"},
-                {"name": "Profit/Loss", "values": chart_pnl, "chartType": "line"},
+                {
+                    "name": "Revenue",
+                    "values": [int(v) for v in chart_revenue],
+                    "chartType": "bar",
+                },
+                {
+                    "name": "Expense",
+                    "values": [int(v) for v in chart_expense],
+                    "chartType": "bar",
+                },
+                {
+                    "name": "Profit/Loss",
+                    "values": [int(v) for v in chart_pnl],
+                    "chartType": "line",
+                },
             ],
         },
         "type": "axis-mixed",
@@ -185,7 +198,7 @@ def get_pnl_report(filters):
     report_summary = [
         {
             "label": "Duration Profit/Loss",
-            "value": f"{sum(chart_pnl):,.2f}" if len(chart_pnl) else "--",
+            "value": f"{sum(chart_pnl):,.0f}" if len(chart_pnl) else "--",
             "indicator": "Red" if chart_pnl[-1] < 0 else "Green",
         }
     ]
@@ -298,6 +311,7 @@ def get_bs_report(filters):
                     "fieldname": tb.trial_balance_date.strftime("%d-%m-%Y"),
                     "fieldtype": "Float",
                     "width": 180,
+                    "precision": "0",
                 }
             ]
         )
@@ -349,9 +363,21 @@ def get_bs_report(filters):
         "data": {
             "labels": chart_labels,
             "datasets": [
-                {"name": "Assets", "values": chart_assets, "chartType": "bar"},
-                {"name": "Liability", "values": chart_liabilties, "chartType": "bar"},
-                {"name": "retained", "values": chart_retained, "chartType": "bar"},
+                {
+                    "name": "Assets",
+                    "values": [int(v) for v in chart_assets],
+                    "chartType": "bar",
+                },
+                {
+                    "name": "Liability",
+                    "values": [int(v) for v in chart_liabilties],
+                    "chartType": "bar",
+                },
+                {
+                    "name": "retained",
+                    "values": [int(v) for v in chart_retained],
+                    "chartType": "bar",
+                },
             ],
         },
         "type": "bar",
@@ -360,7 +386,7 @@ def get_bs_report(filters):
     report_summary = [
         {
             "label": "Retained Earning",
-            "value": f"{chart_retained[-1]:,.2f}" if len(chart_retained) else "--",
+            "value": f"{chart_retained[-1]:,.0f}" if len(chart_retained) else "--",
             "indicator": "Red" if chart_retained[-1] < 0 else "Green",
         }
     ]
